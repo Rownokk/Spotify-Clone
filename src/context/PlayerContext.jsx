@@ -1,6 +1,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { songsData } from "../assets/assets";
 
+
 export const PlayerContext = createContext();
 
 const PlayerContextProvider = (props) => {
@@ -30,6 +31,12 @@ const PlayerContextProvider = (props) => {
      setPlayStatus(false);
   }
 
+  const playWithId = async (id) => {
+      await setTrack(songsData[id]);
+      await audioRef.current.play();
+      setPlayStatus(true);
+  }
+
 useEffect(()=>{
       setTimeout(()=>{
         audioRef.current.ontimeupdate = () => {
@@ -55,7 +62,8 @@ useEffect(()=>{
     track,setTrack,
     playStatus,setPlayStatus,
     time,setTime,
-    play,pause
+    play,pause,
+    playWithId,
   };
   return (
     <PlayerContext.Provider value={contextValue}>
