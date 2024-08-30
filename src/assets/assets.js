@@ -42,6 +42,7 @@ import song1 from  './song1.mp3'
 import song2 from  './song2.mp3'
 import song3 from  './song3.mp3'
 import song4 from  './song4.mp3'
+import song5 from  './song5.mp3'
 export const assets = {
     bell_icon,
     home_icon,
@@ -143,7 +144,7 @@ export const songsData = [
         id:3,
         name: "Song Four",
         image: img4,
-        file:song1,
+        file:song5,
         desc:"Put a smile on your face with these happy tunes",
         duration:"2:50"
     },
